@@ -40,6 +40,7 @@
 #include "Summary.h"
 #include "version.h"
 #include "workers/Workers.h"
+#include "Mem.h"
 
 
 #ifndef XMRIG_NO_HTTPD
@@ -116,6 +117,8 @@ int App::exec()
     uv_signal_start(&m_sigTERM, App::onSignal, SIGTERM);
 
     background();
+
+    Mem::init(true);
 
     if (!CryptoNight::init(m_controller->config()->algorithm().algo())) {
         LOG_ERR("\"%s\" hash self-test failed.", m_controller->config()->algorithm().name());

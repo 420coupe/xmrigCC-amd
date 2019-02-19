@@ -31,7 +31,7 @@
 #include "common/net/Job.h"
 
 
-static inline unsigned char hf_hex2bin(char c, bool &err)
+unsigned char hf_hex2bin(char c, bool &err)
 {
     if (c >= '0' && c <= '9') {
         return c - '0';
@@ -48,7 +48,7 @@ static inline unsigned char hf_hex2bin(char c, bool &err)
 }
 
 
-static inline char hf_bin2hex(unsigned char c)
+char hf_bin2hex(unsigned char c)
 {
     if (c <= 0x9) {
         return '0' + c;
@@ -67,7 +67,8 @@ Job::Job() :
     m_size(0),
     m_diff(0),
     m_target(0),
-    m_blob()
+    m_blob(),
+    m_height(0)
 {
 }
 
@@ -82,6 +83,7 @@ Job::Job(int poolId, bool nicehash, const xmrig::Algorithm &algorithm, const xmr
     m_diff(0),
     m_target(0),
     m_blob(),
+    m_height(0),
     m_algorithm(algorithm),
     m_clientId(clientId)
 {
@@ -196,6 +198,10 @@ void Job::setAlgorithm(const char *algo)
     }
 }
 
+void Job::setHeight(uint64_t height)
+{
+    m_height = height;
+}
 
 bool Job::fromHex(const char* in, unsigned int len, unsigned char* out)
 {
