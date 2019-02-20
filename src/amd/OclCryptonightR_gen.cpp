@@ -144,7 +144,7 @@ static void background_exec(T&& func)
         for (size_t i = 0; i < CryptonightR_cache.size();)
         {
             const CacheEntry& entry = CryptonightR_cache[i];
-            if ((entry.variant == variant) && (entry.height + 2 < height))
+            if ((entry.variant == variant) && (entry.height + PRECOMPILATION_DEPTH < height))
             {
                 //LOG_INFO("CryptonightR: program for height %llu released (old program)", entry.height);
                 old_programs.push_back(entry.program);
@@ -229,12 +229,6 @@ static void background_exec(T&& func)
         return nullptr;
     }
 
-     if (variant != xmrig::VARIANT_WOW)
-    {
-        LOG_ERR("CryptonightR_get_program: invalid variant %d", variant);
-        return nullptr;
-    }
-
      const char* source_code_template =
         #include "opencl/wolf-aes.cl"
         #include "opencl/cryptonight_r.cl"
@@ -248,21 +242,37 @@ static void background_exec(T&& func)
     }
 
      V4_Instruction code[256];
-    const int code_size = v4_random_math_init(code, height);
+    int code_size;
+    switch (variant)
+    {
+    case xmrig::VARIANT_WOW:
+        code_size = v4_random_math_init<xmrig::VARIANT_WOW>(code, height);
+        break;
+    case xmrig::VARIANT_4:
+        code_size = v4_random_math_init<xmrig::VARIANT_4>(code, height);
+        break;
+    default:
+        LOG_ERR("CryptonightR_get_program: invalid variant %d", variant);
+        return nullptr;
+    }
 
      std::string source_code(source_code_template, offset);
     source_code.append(get_code(code, code_size));
     source_code.append(offset + sizeof(include_name) - 1);
 
-     char options[512] = {};
+    char options[512] = {};
     OclCache::get_options(xmrig::CRYPTONIGHT, variant, ctx, options, sizeof(options));
 
-     if (is_64bit(variant))
+    char variant_buf[64];
+    snprintf(variant_buf, sizeof(variant_buf), " -DVARIANT=%d", static_cast<int>(variant));
+    strcat(options, variant_buf);
+    
+    if (is_64bit(variant))
     {
         strcat(options, " -DRANDOM_MATH_64_BIT");
     }
 
-     const char* source = source_code.c_str();
+    const char* source = source_code.c_str();
     std::string hash;
     if (ctx->DeviceString.empty() && !OclCache::get_device_string(ctx->platformIdx, ctx->DeviceID, ctx->DeviceString)) {
         return nullptr;

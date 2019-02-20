@@ -1,5 +1,9 @@
 R"===(
+#define VARIANT_WOW  14 // CryptoNightR (Wownero)
+#define VARIANT_4    15 // CryptoNightR
+
 #define MEM_CHUNK (1 << MEM_CHUNK_EXPONENT)
+
  __attribute__((reqd_work_group_size(WORKSIZE, 1, 1)))
 __kernel void cn1_cryptonight_r(__global uint4 *Scratchpad, __global ulong *states, uint variant, __global ulong *input, uint Threads)
 {
@@ -7,7 +11,8 @@ __kernel void cn1_cryptonight_r(__global uint4 *Scratchpad, __global ulong *stat
     __local uint AES0[256], AES1[256], AES2[256], AES3[256];
     
     const ulong gIdx = get_global_id(0) - get_global_offset(0);
-     for(int i = get_local_id(0); i < 256; i += WORKSIZE)
+    for(int i = get_local_id(0); i < 256; i += WORKSIZE)
+
     {
         const uint tmp = AES0_C[i];
         AES0[i] = tmp;
@@ -90,7 +95,12 @@ __kernel void cn1_cryptonight_r(__global uint4 *Scratchpad, __global ulong *stat
             const ulong2 chunk1 = as_ulong2(SCRATCHPAD_CHUNK(1));
             const ulong2 chunk2 = as_ulong2(SCRATCHPAD_CHUNK(2));
             const ulong2 chunk3 = as_ulong2(SCRATCHPAD_CHUNK(3));
-             SCRATCHPAD_CHUNK(1) = as_uint4(chunk3 + bx1);
+
+#if (VARIANT == VARIANT_4)
+            c ^= as_uint4(chunk1) ^ as_uint4(chunk2) ^ as_uint4(chunk3);
+#endif
+
+            SCRATCHPAD_CHUNK(1) = as_uint4(chunk3 + bx1);
             SCRATCHPAD_CHUNK(2) = as_uint4(chunk1 + bx0);
             SCRATCHPAD_CHUNK(3) = as_uint4(chunk2 + ((ulong2 *)a)[0]);
         }
@@ -112,6 +122,9 @@ __kernel void cn1_cryptonight_r(__global uint4 *Scratchpad, __global ulong *stat
         const ulong r5 = a[1];
         const ulong r6 = as_ulong2(bx0).s0;
         const ulong r7 = as_ulong2(bx1).s0;
+#if (VARIANT == VARIANT_4)
+        const ulong r8 = as_ulong2(bx1).s1;
+#endif
 #define ROT_BITS 64
 #else
         tmp.s0 ^= r0 + r1;
@@ -120,23 +133,53 @@ __kernel void cn1_cryptonight_r(__global uint4 *Scratchpad, __global ulong *stat
         const uint r5 = as_uint2(a[1]).s0;
         const uint r6 = as_uint4(bx0).s0;
         const uint r7 = as_uint4(bx1).s0;
+#if (VARIANT == VARIANT_4)
+        const uint r8 = as_uint4(bx1).s2;
+#endif
 #define ROT_BITS 32
 #endif
  	XMRIG_INCLUDE_RANDOM_MATH
+
+#if (VARIANT == VARIANT_4)
+#ifdef RANDOM_MATH_64_BIT
+        const ulong al = a[0] ^ (r2 ^ r3);
+        const ulong ah = a[1] ^ (r0 ^ r1);
+#else
+        const uint2 al = (uint2)(as_uint2(a[0]).s0 ^ r2, as_uint2(a[0]).s1 ^ r3);
+        const uint2 ah = (uint2)(as_uint2(a[1]).s0 ^ r0, as_uint2(a[1]).s1 ^ r1);
+#endif
+#endif
+
          ulong2 t;
         t.s0 = mul_hi(as_ulong2(c).s0, as_ulong2(tmp).s0);
         t.s1 = as_ulong2(c).s0 * as_ulong2(tmp).s0;
         {
-            const ulong2 chunk1 = as_ulong2(SCRATCHPAD_CHUNK(1)) ^ t;
+            const ulong2 chunk1 = as_ulong2(SCRATCHPAD_CHUNK(1))
+#if (VARIANT == VARIANT_WOW)
+            ^ t
+#endif
+            ;
             const ulong2 chunk2 = as_ulong2(SCRATCHPAD_CHUNK(2));
+#if (VARIANT == VARIANT_WOW)
             t ^= chunk2;
+#endif
             const ulong2 chunk3 = as_ulong2(SCRATCHPAD_CHUNK(3));
-             SCRATCHPAD_CHUNK(1) = as_uint4(chunk3 + bx1);
+#if (VARIANT == VARIANT_4)
+            c ^= as_uint4(chunk1) ^ as_uint4(chunk2) ^ as_uint4(chunk3);
+#endif
+            SCRATCHPAD_CHUNK(1) = as_uint4(chunk3 + bx1);
             SCRATCHPAD_CHUNK(2) = as_uint4(chunk1 + bx0);
             SCRATCHPAD_CHUNK(3) = as_uint4(chunk2 + ((ulong2 *)a)[0]);
         }
-         a[1] += t.s1;
+
+#if (VARIANT == VARIANT_4)
+        a[1] = as_ulong(ah) + t.s1;
+        a[0] = as_ulong(al) + t.s0;
+#else
+
+        a[1] += t.s1;
         a[0] += t.s0;
+#endif
          SCRATCHPAD_CHUNK(0) = ((uint4 *)a)[0];
  #       ifdef __NV_CL_C_VERSION
             *(__global uint16*)((__global uchar*)(Scratchpad) + idx) = *scratchpad_line;

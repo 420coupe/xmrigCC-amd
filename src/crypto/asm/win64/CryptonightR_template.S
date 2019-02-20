@@ -12,9 +12,9 @@
 .section .text
 #endif
 
- #define PUBLIC .global
+#define PUBLIC .global
 
- PUBLIC FN_PREFIX(CryptonightR_instruction0)
+PUBLIC FN_PREFIX(CryptonightR_instruction0)
 PUBLIC FN_PREFIX(CryptonightR_instruction1)
 PUBLIC FN_PREFIX(CryptonightR_instruction2)
 PUBLIC FN_PREFIX(CryptonightR_instruction3)
@@ -529,25 +529,25 @@ PUBLIC FN_PREFIX(CryptonightR_instruction_mov254)
 PUBLIC FN_PREFIX(CryptonightR_instruction_mov255)
 PUBLIC FN_PREFIX(CryptonightR_instruction_mov256)
 
- #include "CryptonightR_template.inc"
+#include "CryptonightR_template.inc"
 
- FN_PREFIX(CryptonightR_instruction0):
+FN_PREFIX(CryptonightR_instruction0):
 	imul	rbx, rbx
 FN_PREFIX(CryptonightR_instruction1):
 	imul	rbx, rbx
 FN_PREFIX(CryptonightR_instruction2):
 	imul	rbx, rbx
 FN_PREFIX(CryptonightR_instruction3):
-	add	rbx, rbx
+	add	rbx, r9
 	add	rbx, 2147483647
 FN_PREFIX(CryptonightR_instruction4):
-	sub	rbx, rbx
+	sub	rbx, r9
 FN_PREFIX(CryptonightR_instruction5):
 	ror	ebx, cl
 FN_PREFIX(CryptonightR_instruction6):
 	rol	ebx, cl
 FN_PREFIX(CryptonightR_instruction7):
-	xor	rbx, rbx
+	xor	rbx, r9
 FN_PREFIX(CryptonightR_instruction8):
 	imul	rsi, rbx
 FN_PREFIX(CryptonightR_instruction9):
@@ -623,16 +623,16 @@ FN_PREFIX(CryptonightR_instruction41):
 FN_PREFIX(CryptonightR_instruction42):
 	imul	rsi, rsi
 FN_PREFIX(CryptonightR_instruction43):
-	add	rsi, rsi
+	add	rsi, r9
 	add	rsi, 2147483647
 FN_PREFIX(CryptonightR_instruction44):
-	sub	rsi, rsi
+	sub	rsi, r9
 FN_PREFIX(CryptonightR_instruction45):
 	ror	esi, cl
 FN_PREFIX(CryptonightR_instruction46):
 	rol	esi, cl
 FN_PREFIX(CryptonightR_instruction47):
-	xor	rsi, rsi
+	xor	rsi, r9
 FN_PREFIX(CryptonightR_instruction48):
 	imul	rdi, rsi
 FN_PREFIX(CryptonightR_instruction49):
@@ -708,16 +708,16 @@ FN_PREFIX(CryptonightR_instruction81):
 FN_PREFIX(CryptonightR_instruction82):
 	imul	rdi, rdi
 FN_PREFIX(CryptonightR_instruction83):
-	add	rdi, rdi
+	add	rdi, r9
 	add	rdi, 2147483647
 FN_PREFIX(CryptonightR_instruction84):
-	sub	rdi, rdi
+	sub	rdi, r9
 FN_PREFIX(CryptonightR_instruction85):
 	ror	edi, cl
 FN_PREFIX(CryptonightR_instruction86):
 	rol	edi, cl
 FN_PREFIX(CryptonightR_instruction87):
-	xor	rdi, rdi
+	xor	rdi, r9
 FN_PREFIX(CryptonightR_instruction88):
 	imul	rbp, rdi
 FN_PREFIX(CryptonightR_instruction89):
@@ -793,16 +793,16 @@ FN_PREFIX(CryptonightR_instruction121):
 FN_PREFIX(CryptonightR_instruction122):
 	imul	rbp, rbp
 FN_PREFIX(CryptonightR_instruction123):
-	add	rbp, rbp
+	add	rbp, r9
 	add	rbp, 2147483647
 FN_PREFIX(CryptonightR_instruction124):
-	sub	rbp, rbp
+	sub	rbp, r9
 FN_PREFIX(CryptonightR_instruction125):
 	ror	ebp, cl
 FN_PREFIX(CryptonightR_instruction126):
 	rol	ebp, cl
 FN_PREFIX(CryptonightR_instruction127):
-	xor	rbp, rbp
+	xor	rbp, r9
 FN_PREFIX(CryptonightR_instruction128):
 	imul	rbx, rsp
 FN_PREFIX(CryptonightR_instruction129):
@@ -1079,514 +1079,514 @@ FN_PREFIX(CryptonightR_instruction256):
 	imul	rbx, rbx
 FN_PREFIX(CryptonightR_instruction_mov0):
 
- FN_PREFIX(CryptonightR_instruction_mov1):
+FN_PREFIX(CryptonightR_instruction_mov1):
 
- FN_PREFIX(CryptonightR_instruction_mov2):
+FN_PREFIX(CryptonightR_instruction_mov2):
 
- FN_PREFIX(CryptonightR_instruction_mov3):
+FN_PREFIX(CryptonightR_instruction_mov3):
 
- FN_PREFIX(CryptonightR_instruction_mov4):
+FN_PREFIX(CryptonightR_instruction_mov4):
 
- FN_PREFIX(CryptonightR_instruction_mov5):
+FN_PREFIX(CryptonightR_instruction_mov5):
 	mov	rcx, rbx
 FN_PREFIX(CryptonightR_instruction_mov6):
 	mov	rcx, rbx
 FN_PREFIX(CryptonightR_instruction_mov7):
 
- FN_PREFIX(CryptonightR_instruction_mov8):
+FN_PREFIX(CryptonightR_instruction_mov8):
 
- FN_PREFIX(CryptonightR_instruction_mov9):
+FN_PREFIX(CryptonightR_instruction_mov9):
 
- FN_PREFIX(CryptonightR_instruction_mov10):
+FN_PREFIX(CryptonightR_instruction_mov10):
 
- FN_PREFIX(CryptonightR_instruction_mov11):
+FN_PREFIX(CryptonightR_instruction_mov11):
 
- FN_PREFIX(CryptonightR_instruction_mov12):
+FN_PREFIX(CryptonightR_instruction_mov12):
 
- FN_PREFIX(CryptonightR_instruction_mov13):
+FN_PREFIX(CryptonightR_instruction_mov13):
 	mov	rcx, rbx
 FN_PREFIX(CryptonightR_instruction_mov14):
 	mov	rcx, rbx
 FN_PREFIX(CryptonightR_instruction_mov15):
 
- FN_PREFIX(CryptonightR_instruction_mov16):
+FN_PREFIX(CryptonightR_instruction_mov16):
 
- FN_PREFIX(CryptonightR_instruction_mov17):
+FN_PREFIX(CryptonightR_instruction_mov17):
 
- FN_PREFIX(CryptonightR_instruction_mov18):
+FN_PREFIX(CryptonightR_instruction_mov18):
 
- FN_PREFIX(CryptonightR_instruction_mov19):
+FN_PREFIX(CryptonightR_instruction_mov19):
 
- FN_PREFIX(CryptonightR_instruction_mov20):
+FN_PREFIX(CryptonightR_instruction_mov20):
 
- FN_PREFIX(CryptonightR_instruction_mov21):
+FN_PREFIX(CryptonightR_instruction_mov21):
 	mov	rcx, rbx
 FN_PREFIX(CryptonightR_instruction_mov22):
 	mov	rcx, rbx
 FN_PREFIX(CryptonightR_instruction_mov23):
 
- FN_PREFIX(CryptonightR_instruction_mov24):
+FN_PREFIX(CryptonightR_instruction_mov24):
 
- FN_PREFIX(CryptonightR_instruction_mov25):
+FN_PREFIX(CryptonightR_instruction_mov25):
 
- FN_PREFIX(CryptonightR_instruction_mov26):
+FN_PREFIX(CryptonightR_instruction_mov26):
 
- FN_PREFIX(CryptonightR_instruction_mov27):
+FN_PREFIX(CryptonightR_instruction_mov27):
 
- FN_PREFIX(CryptonightR_instruction_mov28):
+FN_PREFIX(CryptonightR_instruction_mov28):
 
- FN_PREFIX(CryptonightR_instruction_mov29):
+FN_PREFIX(CryptonightR_instruction_mov29):
 	mov	rcx, rbx
 FN_PREFIX(CryptonightR_instruction_mov30):
 	mov	rcx, rbx
 FN_PREFIX(CryptonightR_instruction_mov31):
 
- FN_PREFIX(CryptonightR_instruction_mov32):
+FN_PREFIX(CryptonightR_instruction_mov32):
 
- FN_PREFIX(CryptonightR_instruction_mov33):
+FN_PREFIX(CryptonightR_instruction_mov33):
 
- FN_PREFIX(CryptonightR_instruction_mov34):
+FN_PREFIX(CryptonightR_instruction_mov34):
 
- FN_PREFIX(CryptonightR_instruction_mov35):
+FN_PREFIX(CryptonightR_instruction_mov35):
 
- FN_PREFIX(CryptonightR_instruction_mov36):
+FN_PREFIX(CryptonightR_instruction_mov36):
 
- FN_PREFIX(CryptonightR_instruction_mov37):
+FN_PREFIX(CryptonightR_instruction_mov37):
 	mov	rcx, rsi
 FN_PREFIX(CryptonightR_instruction_mov38):
 	mov	rcx, rsi
 FN_PREFIX(CryptonightR_instruction_mov39):
 
- FN_PREFIX(CryptonightR_instruction_mov40):
+FN_PREFIX(CryptonightR_instruction_mov40):
 
- FN_PREFIX(CryptonightR_instruction_mov41):
+FN_PREFIX(CryptonightR_instruction_mov41):
 
- FN_PREFIX(CryptonightR_instruction_mov42):
+FN_PREFIX(CryptonightR_instruction_mov42):
 
- FN_PREFIX(CryptonightR_instruction_mov43):
+FN_PREFIX(CryptonightR_instruction_mov43):
 
- FN_PREFIX(CryptonightR_instruction_mov44):
+FN_PREFIX(CryptonightR_instruction_mov44):
 
- FN_PREFIX(CryptonightR_instruction_mov45):
+FN_PREFIX(CryptonightR_instruction_mov45):
 	mov	rcx, rsi
 FN_PREFIX(CryptonightR_instruction_mov46):
 	mov	rcx, rsi
 FN_PREFIX(CryptonightR_instruction_mov47):
 
- FN_PREFIX(CryptonightR_instruction_mov48):
+FN_PREFIX(CryptonightR_instruction_mov48):
 
- FN_PREFIX(CryptonightR_instruction_mov49):
+FN_PREFIX(CryptonightR_instruction_mov49):
 
- FN_PREFIX(CryptonightR_instruction_mov50):
+FN_PREFIX(CryptonightR_instruction_mov50):
 
- FN_PREFIX(CryptonightR_instruction_mov51):
+FN_PREFIX(CryptonightR_instruction_mov51):
 
- FN_PREFIX(CryptonightR_instruction_mov52):
+FN_PREFIX(CryptonightR_instruction_mov52):
 
- FN_PREFIX(CryptonightR_instruction_mov53):
+FN_PREFIX(CryptonightR_instruction_mov53):
 	mov	rcx, rsi
 FN_PREFIX(CryptonightR_instruction_mov54):
 	mov	rcx, rsi
 FN_PREFIX(CryptonightR_instruction_mov55):
 
- FN_PREFIX(CryptonightR_instruction_mov56):
+FN_PREFIX(CryptonightR_instruction_mov56):
 
- FN_PREFIX(CryptonightR_instruction_mov57):
+FN_PREFIX(CryptonightR_instruction_mov57):
 
- FN_PREFIX(CryptonightR_instruction_mov58):
+FN_PREFIX(CryptonightR_instruction_mov58):
 
- FN_PREFIX(CryptonightR_instruction_mov59):
+FN_PREFIX(CryptonightR_instruction_mov59):
 
- FN_PREFIX(CryptonightR_instruction_mov60):
+FN_PREFIX(CryptonightR_instruction_mov60):
 
- FN_PREFIX(CryptonightR_instruction_mov61):
+FN_PREFIX(CryptonightR_instruction_mov61):
 	mov	rcx, rsi
 FN_PREFIX(CryptonightR_instruction_mov62):
 	mov	rcx, rsi
 FN_PREFIX(CryptonightR_instruction_mov63):
 
- FN_PREFIX(CryptonightR_instruction_mov64):
+FN_PREFIX(CryptonightR_instruction_mov64):
 
- FN_PREFIX(CryptonightR_instruction_mov65):
+FN_PREFIX(CryptonightR_instruction_mov65):
 
- FN_PREFIX(CryptonightR_instruction_mov66):
+FN_PREFIX(CryptonightR_instruction_mov66):
 
- FN_PREFIX(CryptonightR_instruction_mov67):
+FN_PREFIX(CryptonightR_instruction_mov67):
 
- FN_PREFIX(CryptonightR_instruction_mov68):
+FN_PREFIX(CryptonightR_instruction_mov68):
 
- FN_PREFIX(CryptonightR_instruction_mov69):
+FN_PREFIX(CryptonightR_instruction_mov69):
 	mov	rcx, rdi
 FN_PREFIX(CryptonightR_instruction_mov70):
 	mov	rcx, rdi
 FN_PREFIX(CryptonightR_instruction_mov71):
 
- FN_PREFIX(CryptonightR_instruction_mov72):
+FN_PREFIX(CryptonightR_instruction_mov72):
 
- FN_PREFIX(CryptonightR_instruction_mov73):
+FN_PREFIX(CryptonightR_instruction_mov73):
 
- FN_PREFIX(CryptonightR_instruction_mov74):
+FN_PREFIX(CryptonightR_instruction_mov74):
 
- FN_PREFIX(CryptonightR_instruction_mov75):
+FN_PREFIX(CryptonightR_instruction_mov75):
 
- FN_PREFIX(CryptonightR_instruction_mov76):
+FN_PREFIX(CryptonightR_instruction_mov76):
 
- FN_PREFIX(CryptonightR_instruction_mov77):
+FN_PREFIX(CryptonightR_instruction_mov77):
 	mov	rcx, rdi
 FN_PREFIX(CryptonightR_instruction_mov78):
 	mov	rcx, rdi
 FN_PREFIX(CryptonightR_instruction_mov79):
 
- FN_PREFIX(CryptonightR_instruction_mov80):
+FN_PREFIX(CryptonightR_instruction_mov80):
 
- FN_PREFIX(CryptonightR_instruction_mov81):
+FN_PREFIX(CryptonightR_instruction_mov81):
 
- FN_PREFIX(CryptonightR_instruction_mov82):
+FN_PREFIX(CryptonightR_instruction_mov82):
 
- FN_PREFIX(CryptonightR_instruction_mov83):
+FN_PREFIX(CryptonightR_instruction_mov83):
 
- FN_PREFIX(CryptonightR_instruction_mov84):
+FN_PREFIX(CryptonightR_instruction_mov84):
 
- FN_PREFIX(CryptonightR_instruction_mov85):
+FN_PREFIX(CryptonightR_instruction_mov85):
 	mov	rcx, rdi
 FN_PREFIX(CryptonightR_instruction_mov86):
 	mov	rcx, rdi
 FN_PREFIX(CryptonightR_instruction_mov87):
 
- FN_PREFIX(CryptonightR_instruction_mov88):
+FN_PREFIX(CryptonightR_instruction_mov88):
 
- FN_PREFIX(CryptonightR_instruction_mov89):
+FN_PREFIX(CryptonightR_instruction_mov89):
 
- FN_PREFIX(CryptonightR_instruction_mov90):
+FN_PREFIX(CryptonightR_instruction_mov90):
 
- FN_PREFIX(CryptonightR_instruction_mov91):
+FN_PREFIX(CryptonightR_instruction_mov91):
 
- FN_PREFIX(CryptonightR_instruction_mov92):
+FN_PREFIX(CryptonightR_instruction_mov92):
 
- FN_PREFIX(CryptonightR_instruction_mov93):
+FN_PREFIX(CryptonightR_instruction_mov93):
 	mov	rcx, rdi
 FN_PREFIX(CryptonightR_instruction_mov94):
 	mov	rcx, rdi
 FN_PREFIX(CryptonightR_instruction_mov95):
 
- FN_PREFIX(CryptonightR_instruction_mov96):
+FN_PREFIX(CryptonightR_instruction_mov96):
 
- FN_PREFIX(CryptonightR_instruction_mov97):
+FN_PREFIX(CryptonightR_instruction_mov97):
 
- FN_PREFIX(CryptonightR_instruction_mov98):
+FN_PREFIX(CryptonightR_instruction_mov98):
 
- FN_PREFIX(CryptonightR_instruction_mov99):
+FN_PREFIX(CryptonightR_instruction_mov99):
 
- FN_PREFIX(CryptonightR_instruction_mov100):
+FN_PREFIX(CryptonightR_instruction_mov100):
 
- FN_PREFIX(CryptonightR_instruction_mov101):
+FN_PREFIX(CryptonightR_instruction_mov101):
 	mov	rcx, rbp
 FN_PREFIX(CryptonightR_instruction_mov102):
 	mov	rcx, rbp
 FN_PREFIX(CryptonightR_instruction_mov103):
 
- FN_PREFIX(CryptonightR_instruction_mov104):
+FN_PREFIX(CryptonightR_instruction_mov104):
 
- FN_PREFIX(CryptonightR_instruction_mov105):
+FN_PREFIX(CryptonightR_instruction_mov105):
 
- FN_PREFIX(CryptonightR_instruction_mov106):
+FN_PREFIX(CryptonightR_instruction_mov106):
 
- FN_PREFIX(CryptonightR_instruction_mov107):
+FN_PREFIX(CryptonightR_instruction_mov107):
 
- FN_PREFIX(CryptonightR_instruction_mov108):
+FN_PREFIX(CryptonightR_instruction_mov108):
 
- FN_PREFIX(CryptonightR_instruction_mov109):
+FN_PREFIX(CryptonightR_instruction_mov109):
 	mov	rcx, rbp
 FN_PREFIX(CryptonightR_instruction_mov110):
 	mov	rcx, rbp
 FN_PREFIX(CryptonightR_instruction_mov111):
 
- FN_PREFIX(CryptonightR_instruction_mov112):
+FN_PREFIX(CryptonightR_instruction_mov112):
 
- FN_PREFIX(CryptonightR_instruction_mov113):
+FN_PREFIX(CryptonightR_instruction_mov113):
 
- FN_PREFIX(CryptonightR_instruction_mov114):
+FN_PREFIX(CryptonightR_instruction_mov114):
 
- FN_PREFIX(CryptonightR_instruction_mov115):
+FN_PREFIX(CryptonightR_instruction_mov115):
 
- FN_PREFIX(CryptonightR_instruction_mov116):
+FN_PREFIX(CryptonightR_instruction_mov116):
 
- FN_PREFIX(CryptonightR_instruction_mov117):
+FN_PREFIX(CryptonightR_instruction_mov117):
 	mov	rcx, rbp
 FN_PREFIX(CryptonightR_instruction_mov118):
 	mov	rcx, rbp
 FN_PREFIX(CryptonightR_instruction_mov119):
 
- FN_PREFIX(CryptonightR_instruction_mov120):
+FN_PREFIX(CryptonightR_instruction_mov120):
 
- FN_PREFIX(CryptonightR_instruction_mov121):
+FN_PREFIX(CryptonightR_instruction_mov121):
 
- FN_PREFIX(CryptonightR_instruction_mov122):
+FN_PREFIX(CryptonightR_instruction_mov122):
 
- FN_PREFIX(CryptonightR_instruction_mov123):
+FN_PREFIX(CryptonightR_instruction_mov123):
 
- FN_PREFIX(CryptonightR_instruction_mov124):
+FN_PREFIX(CryptonightR_instruction_mov124):
 
- FN_PREFIX(CryptonightR_instruction_mov125):
+FN_PREFIX(CryptonightR_instruction_mov125):
 	mov	rcx, rbp
 FN_PREFIX(CryptonightR_instruction_mov126):
 	mov	rcx, rbp
 FN_PREFIX(CryptonightR_instruction_mov127):
 
- FN_PREFIX(CryptonightR_instruction_mov128):
+FN_PREFIX(CryptonightR_instruction_mov128):
 
- FN_PREFIX(CryptonightR_instruction_mov129):
+FN_PREFIX(CryptonightR_instruction_mov129):
 
- FN_PREFIX(CryptonightR_instruction_mov130):
+FN_PREFIX(CryptonightR_instruction_mov130):
 
- FN_PREFIX(CryptonightR_instruction_mov131):
+FN_PREFIX(CryptonightR_instruction_mov131):
 
- FN_PREFIX(CryptonightR_instruction_mov132):
+FN_PREFIX(CryptonightR_instruction_mov132):
 
- FN_PREFIX(CryptonightR_instruction_mov133):
+FN_PREFIX(CryptonightR_instruction_mov133):
 	mov	rcx, rsp
 FN_PREFIX(CryptonightR_instruction_mov134):
 	mov	rcx, rsp
 FN_PREFIX(CryptonightR_instruction_mov135):
 
- FN_PREFIX(CryptonightR_instruction_mov136):
+FN_PREFIX(CryptonightR_instruction_mov136):
 
- FN_PREFIX(CryptonightR_instruction_mov137):
+FN_PREFIX(CryptonightR_instruction_mov137):
 
- FN_PREFIX(CryptonightR_instruction_mov138):
+FN_PREFIX(CryptonightR_instruction_mov138):
 
- FN_PREFIX(CryptonightR_instruction_mov139):
+FN_PREFIX(CryptonightR_instruction_mov139):
 
- FN_PREFIX(CryptonightR_instruction_mov140):
+FN_PREFIX(CryptonightR_instruction_mov140):
 
- FN_PREFIX(CryptonightR_instruction_mov141):
+FN_PREFIX(CryptonightR_instruction_mov141):
 	mov	rcx, rsp
 FN_PREFIX(CryptonightR_instruction_mov142):
 	mov	rcx, rsp
 FN_PREFIX(CryptonightR_instruction_mov143):
 
- FN_PREFIX(CryptonightR_instruction_mov144):
+FN_PREFIX(CryptonightR_instruction_mov144):
 
- FN_PREFIX(CryptonightR_instruction_mov145):
+FN_PREFIX(CryptonightR_instruction_mov145):
 
- FN_PREFIX(CryptonightR_instruction_mov146):
+FN_PREFIX(CryptonightR_instruction_mov146):
 
- FN_PREFIX(CryptonightR_instruction_mov147):
+FN_PREFIX(CryptonightR_instruction_mov147):
 
- FN_PREFIX(CryptonightR_instruction_mov148):
+FN_PREFIX(CryptonightR_instruction_mov148):
 
- FN_PREFIX(CryptonightR_instruction_mov149):
+FN_PREFIX(CryptonightR_instruction_mov149):
 	mov	rcx, rsp
 FN_PREFIX(CryptonightR_instruction_mov150):
 	mov	rcx, rsp
 FN_PREFIX(CryptonightR_instruction_mov151):
 
- FN_PREFIX(CryptonightR_instruction_mov152):
+FN_PREFIX(CryptonightR_instruction_mov152):
 
- FN_PREFIX(CryptonightR_instruction_mov153):
+FN_PREFIX(CryptonightR_instruction_mov153):
 
- FN_PREFIX(CryptonightR_instruction_mov154):
+FN_PREFIX(CryptonightR_instruction_mov154):
 
- FN_PREFIX(CryptonightR_instruction_mov155):
+FN_PREFIX(CryptonightR_instruction_mov155):
 
- FN_PREFIX(CryptonightR_instruction_mov156):
+FN_PREFIX(CryptonightR_instruction_mov156):
 
- FN_PREFIX(CryptonightR_instruction_mov157):
+FN_PREFIX(CryptonightR_instruction_mov157):
 	mov	rcx, rsp
 FN_PREFIX(CryptonightR_instruction_mov158):
 	mov	rcx, rsp
 FN_PREFIX(CryptonightR_instruction_mov159):
 
- FN_PREFIX(CryptonightR_instruction_mov160):
+FN_PREFIX(CryptonightR_instruction_mov160):
 
- FN_PREFIX(CryptonightR_instruction_mov161):
+FN_PREFIX(CryptonightR_instruction_mov161):
 
- FN_PREFIX(CryptonightR_instruction_mov162):
+FN_PREFIX(CryptonightR_instruction_mov162):
 
- FN_PREFIX(CryptonightR_instruction_mov163):
+FN_PREFIX(CryptonightR_instruction_mov163):
 
- FN_PREFIX(CryptonightR_instruction_mov164):
+FN_PREFIX(CryptonightR_instruction_mov164):
 
- FN_PREFIX(CryptonightR_instruction_mov165):
+FN_PREFIX(CryptonightR_instruction_mov165):
 	mov	rcx, r15
 FN_PREFIX(CryptonightR_instruction_mov166):
 	mov	rcx, r15
 FN_PREFIX(CryptonightR_instruction_mov167):
 
- FN_PREFIX(CryptonightR_instruction_mov168):
+FN_PREFIX(CryptonightR_instruction_mov168):
 
- FN_PREFIX(CryptonightR_instruction_mov169):
+FN_PREFIX(CryptonightR_instruction_mov169):
 
- FN_PREFIX(CryptonightR_instruction_mov170):
+FN_PREFIX(CryptonightR_instruction_mov170):
 
- FN_PREFIX(CryptonightR_instruction_mov171):
+FN_PREFIX(CryptonightR_instruction_mov171):
 
- FN_PREFIX(CryptonightR_instruction_mov172):
+FN_PREFIX(CryptonightR_instruction_mov172):
 
- FN_PREFIX(CryptonightR_instruction_mov173):
+FN_PREFIX(CryptonightR_instruction_mov173):
 	mov	rcx, r15
 FN_PREFIX(CryptonightR_instruction_mov174):
 	mov	rcx, r15
 FN_PREFIX(CryptonightR_instruction_mov175):
 
- FN_PREFIX(CryptonightR_instruction_mov176):
+FN_PREFIX(CryptonightR_instruction_mov176):
 
- FN_PREFIX(CryptonightR_instruction_mov177):
+FN_PREFIX(CryptonightR_instruction_mov177):
 
- FN_PREFIX(CryptonightR_instruction_mov178):
+FN_PREFIX(CryptonightR_instruction_mov178):
 
- FN_PREFIX(CryptonightR_instruction_mov179):
+FN_PREFIX(CryptonightR_instruction_mov179):
 
- FN_PREFIX(CryptonightR_instruction_mov180):
+FN_PREFIX(CryptonightR_instruction_mov180):
 
- FN_PREFIX(CryptonightR_instruction_mov181):
+FN_PREFIX(CryptonightR_instruction_mov181):
 	mov	rcx, r15
 FN_PREFIX(CryptonightR_instruction_mov182):
 	mov	rcx, r15
 FN_PREFIX(CryptonightR_instruction_mov183):
 
- FN_PREFIX(CryptonightR_instruction_mov184):
+FN_PREFIX(CryptonightR_instruction_mov184):
 
- FN_PREFIX(CryptonightR_instruction_mov185):
+FN_PREFIX(CryptonightR_instruction_mov185):
 
- FN_PREFIX(CryptonightR_instruction_mov186):
+FN_PREFIX(CryptonightR_instruction_mov186):
 
- FN_PREFIX(CryptonightR_instruction_mov187):
+FN_PREFIX(CryptonightR_instruction_mov187):
 
- FN_PREFIX(CryptonightR_instruction_mov188):
+FN_PREFIX(CryptonightR_instruction_mov188):
 
- FN_PREFIX(CryptonightR_instruction_mov189):
+FN_PREFIX(CryptonightR_instruction_mov189):
 	mov	rcx, r15
 FN_PREFIX(CryptonightR_instruction_mov190):
 	mov	rcx, r15
 FN_PREFIX(CryptonightR_instruction_mov191):
 
- FN_PREFIX(CryptonightR_instruction_mov192):
+FN_PREFIX(CryptonightR_instruction_mov192):
 
- FN_PREFIX(CryptonightR_instruction_mov193):
+FN_PREFIX(CryptonightR_instruction_mov193):
 
- FN_PREFIX(CryptonightR_instruction_mov194):
+FN_PREFIX(CryptonightR_instruction_mov194):
 
- FN_PREFIX(CryptonightR_instruction_mov195):
+FN_PREFIX(CryptonightR_instruction_mov195):
 
- FN_PREFIX(CryptonightR_instruction_mov196):
+FN_PREFIX(CryptonightR_instruction_mov196):
 
- FN_PREFIX(CryptonightR_instruction_mov197):
+FN_PREFIX(CryptonightR_instruction_mov197):
 	mov	rcx, rax
 FN_PREFIX(CryptonightR_instruction_mov198):
 	mov	rcx, rax
 FN_PREFIX(CryptonightR_instruction_mov199):
 
- FN_PREFIX(CryptonightR_instruction_mov200):
+FN_PREFIX(CryptonightR_instruction_mov200):
 
- FN_PREFIX(CryptonightR_instruction_mov201):
+FN_PREFIX(CryptonightR_instruction_mov201):
 
- FN_PREFIX(CryptonightR_instruction_mov202):
+FN_PREFIX(CryptonightR_instruction_mov202):
 
- FN_PREFIX(CryptonightR_instruction_mov203):
+FN_PREFIX(CryptonightR_instruction_mov203):
 
- FN_PREFIX(CryptonightR_instruction_mov204):
+FN_PREFIX(CryptonightR_instruction_mov204):
 
- FN_PREFIX(CryptonightR_instruction_mov205):
+FN_PREFIX(CryptonightR_instruction_mov205):
 	mov	rcx, rax
 FN_PREFIX(CryptonightR_instruction_mov206):
 	mov	rcx, rax
 FN_PREFIX(CryptonightR_instruction_mov207):
 
- FN_PREFIX(CryptonightR_instruction_mov208):
+FN_PREFIX(CryptonightR_instruction_mov208):
 
- FN_PREFIX(CryptonightR_instruction_mov209):
+FN_PREFIX(CryptonightR_instruction_mov209):
 
- FN_PREFIX(CryptonightR_instruction_mov210):
+FN_PREFIX(CryptonightR_instruction_mov210):
 
- FN_PREFIX(CryptonightR_instruction_mov211):
+FN_PREFIX(CryptonightR_instruction_mov211):
 
- FN_PREFIX(CryptonightR_instruction_mov212):
+FN_PREFIX(CryptonightR_instruction_mov212):
 
- FN_PREFIX(CryptonightR_instruction_mov213):
+FN_PREFIX(CryptonightR_instruction_mov213):
 	mov	rcx, rax
 FN_PREFIX(CryptonightR_instruction_mov214):
 	mov	rcx, rax
 FN_PREFIX(CryptonightR_instruction_mov215):
 
- FN_PREFIX(CryptonightR_instruction_mov216):
+FN_PREFIX(CryptonightR_instruction_mov216):
 
- FN_PREFIX(CryptonightR_instruction_mov217):
+FN_PREFIX(CryptonightR_instruction_mov217):
 
- FN_PREFIX(CryptonightR_instruction_mov218):
+FN_PREFIX(CryptonightR_instruction_mov218):
 
- FN_PREFIX(CryptonightR_instruction_mov219):
+FN_PREFIX(CryptonightR_instruction_mov219):
 
- FN_PREFIX(CryptonightR_instruction_mov220):
+FN_PREFIX(CryptonightR_instruction_mov220):
 
- FN_PREFIX(CryptonightR_instruction_mov221):
+FN_PREFIX(CryptonightR_instruction_mov221):
 	mov	rcx, rax
 FN_PREFIX(CryptonightR_instruction_mov222):
 	mov	rcx, rax
 FN_PREFIX(CryptonightR_instruction_mov223):
 
- FN_PREFIX(CryptonightR_instruction_mov224):
+FN_PREFIX(CryptonightR_instruction_mov224):
 
- FN_PREFIX(CryptonightR_instruction_mov225):
+FN_PREFIX(CryptonightR_instruction_mov225):
 
- FN_PREFIX(CryptonightR_instruction_mov226):
+FN_PREFIX(CryptonightR_instruction_mov226):
 
- FN_PREFIX(CryptonightR_instruction_mov227):
+FN_PREFIX(CryptonightR_instruction_mov227):
 
- FN_PREFIX(CryptonightR_instruction_mov228):
+FN_PREFIX(CryptonightR_instruction_mov228):
 
- FN_PREFIX(CryptonightR_instruction_mov229):
+FN_PREFIX(CryptonightR_instruction_mov229):
 	mov	rcx, rdx
 FN_PREFIX(CryptonightR_instruction_mov230):
 	mov	rcx, rdx
 FN_PREFIX(CryptonightR_instruction_mov231):
 
- FN_PREFIX(CryptonightR_instruction_mov232):
+FN_PREFIX(CryptonightR_instruction_mov232):
 
- FN_PREFIX(CryptonightR_instruction_mov233):
+FN_PREFIX(CryptonightR_instruction_mov233):
 
- FN_PREFIX(CryptonightR_instruction_mov234):
+FN_PREFIX(CryptonightR_instruction_mov234):
 
- FN_PREFIX(CryptonightR_instruction_mov235):
+FN_PREFIX(CryptonightR_instruction_mov235):
 
- FN_PREFIX(CryptonightR_instruction_mov236):
+FN_PREFIX(CryptonightR_instruction_mov236):
 
- FN_PREFIX(CryptonightR_instruction_mov237):
+FN_PREFIX(CryptonightR_instruction_mov237):
 	mov	rcx, rdx
 FN_PREFIX(CryptonightR_instruction_mov238):
 	mov	rcx, rdx
 FN_PREFIX(CryptonightR_instruction_mov239):
 
- FN_PREFIX(CryptonightR_instruction_mov240):
+FN_PREFIX(CryptonightR_instruction_mov240):
 
- FN_PREFIX(CryptonightR_instruction_mov241):
+FN_PREFIX(CryptonightR_instruction_mov241):
 
- FN_PREFIX(CryptonightR_instruction_mov242):
+FN_PREFIX(CryptonightR_instruction_mov242):
 
- FN_PREFIX(CryptonightR_instruction_mov243):
+FN_PREFIX(CryptonightR_instruction_mov243):
 
- FN_PREFIX(CryptonightR_instruction_mov244):
+FN_PREFIX(CryptonightR_instruction_mov244):
 
- FN_PREFIX(CryptonightR_instruction_mov245):
+FN_PREFIX(CryptonightR_instruction_mov245):
 	mov	rcx, rdx
 FN_PREFIX(CryptonightR_instruction_mov246):
 	mov	rcx, rdx
 FN_PREFIX(CryptonightR_instruction_mov247):
 
- FN_PREFIX(CryptonightR_instruction_mov248):
+FN_PREFIX(CryptonightR_instruction_mov248):
 
- FN_PREFIX(CryptonightR_instruction_mov249):
+FN_PREFIX(CryptonightR_instruction_mov249):
 
- FN_PREFIX(CryptonightR_instruction_mov250):
+FN_PREFIX(CryptonightR_instruction_mov250):
 
- FN_PREFIX(CryptonightR_instruction_mov251):
+FN_PREFIX(CryptonightR_instruction_mov251):
 
- FN_PREFIX(CryptonightR_instruction_mov252):
+FN_PREFIX(CryptonightR_instruction_mov252):
 
- FN_PREFIX(CryptonightR_instruction_mov253):
+FN_PREFIX(CryptonightR_instruction_mov253):
 	mov	rcx, rdx
 FN_PREFIX(CryptonightR_instruction_mov254):
 	mov	rcx, rdx
 FN_PREFIX(CryptonightR_instruction_mov255):
 
- FN_PREFIX(CryptonightR_instruction_mov256):
+FN_PREFIX(CryptonightR_instruction_mov256):
